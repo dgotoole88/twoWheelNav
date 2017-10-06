@@ -1,11 +1,19 @@
 <?php
     $count = 0;
 
+    // validate user input
+    function test_Reginput($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
     if(isset($_POST) & !empty($_POST)){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $firstName = $_POST['firstName'];
-        $surname = $_POST['surname'];
+        $username = filter_var(test_Reginput($_POST['username']), FILTER_SANITIZE_STRING);
+        $password = filter_var(test_Reginput($_POST['password']), FILTER_SANITIZE_STRING);
+        $firstName = filter_var(test_Reginput($_POST['firstName']), FILTER_SANITIZE_STRING);
+        $surname = filter_var(test_Reginput($_POST['surname']), FILTER_SANITIZE_STRING);
         $email = $_POST['email'];
 
         $pdo = new PDO("mysql:host=localhost;dbname=twoWheelNav", 'root', '');
@@ -13,34 +21,32 @@
         $res = $pdo->query($sqlReserved);
         $count = $res->fetchColumn();
 
+        $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+
         if($count == 0){
-            $sqlLogin = "INSERT INTO login (username, password) VALUES ('$username', '$password')";
+            $sqlLogin = "INSERT INTO login (username, password) VALUES ('$username', '$hashedPass')";
             $resultLogin = $pdo->query($sqlLogin);
     
             if($resultLogin){
                 $sqlTourist = "INSERT INTO tourist (firstName, surname, email, loginID) VALUES ('$firstName', '$surname', '$email', (SELECT loginID FROM login WHERE username='$username'))";
                 $result = $pdo->query($sqlTourist);
                 if($result){
+                    //include 'regSuccess.php';
                     ?>
                         <script>
                             alert('Tourist Registration Successful! You may now login');
-                            window.location="login.php";
+                            window.location="../login.php";
                         </script>
                     <?php
                 }else{
-                    ?>
-                    <script>alert('Tourist Registration Failed')</script>
-                    <?php
+                    include 'errorModal.php';
+                    unset($_SESSION["currentUser"]);
                 }
             }else{
-                ?>
-                <script>alert('Tourist Registration Failed')</script>
-                <?php
+                include 'errorModal.php';
             }
         }else{
-            ?>
-            <script>alert('Username Taken')</script>
-            <?php
+            include 'errorUsernameTaken.php';
         }
     }
 ?>

@@ -4,8 +4,8 @@
     $password = "";
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=twowheelnav", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = new PDO("mysql:host=$servername;dbname=twowheelnav", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
     catch(PDOException $e){
         $error_message = $e->getMessage();

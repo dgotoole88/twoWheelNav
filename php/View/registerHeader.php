@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
     <?php include '../Controller/navMenu.php'; ?>
 
     <!-- Bootstrap core CSS -->
@@ -40,17 +39,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home
+              <a class="nav-link" href="../login.php">Back To Login
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="search.php">Search</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.php">View Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../Controller/session.php">Logout</a>
             </li>
           </ul>
         </div>

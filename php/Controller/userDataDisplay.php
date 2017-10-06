@@ -2,7 +2,7 @@
     if(!isset($_SESSION)){
         session_start();
     }
-    include 'loginTrial.php';
+    include '../Model/connectDB.php';
     $userCheck = $_SESSION['currentUser'];
     $_SESSION['count'] = 1;
 

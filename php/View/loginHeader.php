@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
-    <?php include '../Controller/navMenu.php'; ?>
+    <?php include 'Controller/navMenu.php'; ?>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="View/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <style>
@@ -40,17 +39,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home
+              <a class="nav-link" href="View/signUp.php">Register
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="search.php">Search</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.php">View Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../Controller/session.php">Logout</a>
             </li>
           </ul>
         </div>
@@ -58,9 +48,9 @@
     </nav>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="View/vendor/jquery/jquery.min.js"></script>
+    <script src="View/vendor/popper/popper.min.js"></script>
+    <script src="View/vendor/bootstrap/js/bootstrap.min.js"></script>
 
   </body>
 
