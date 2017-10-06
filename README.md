@@ -6,7 +6,7 @@ ________________________________________________________________________________
 Two Wheel Nav Notes:
 
 -	The search page will most likely be taken out. All search functions
-	will be implemented on the home page. Reduce the need for guest users
+	will be implemented on the home page. Reduce the need for users
 	to navigate and simplifies the site map.
 
 -	Once logged in and viewing the profile page there will be information on
