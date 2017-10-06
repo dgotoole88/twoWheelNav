@@ -35,20 +35,13 @@
 			<div class="footer-left">
 
 				<p class="footer-links">
-					<a href="index.php">Home</a>
-					·
-					<a href="search.php">Search</a>
-					·
-					<a href="profile.php">Profile</a>
-					·
-					<a href="../Controller/session.php">Logout</a>
+					<a href="../login.php">Login</a>
 				</p>
 
 				<p>Two Wheel Nav &copy; 2015</p>
 			</div>
 
 		</footer>
-
 		<div id="sessionInfo">
             	SESSION INFO: <?php print_r($_SESSION); ?>
         </div>
