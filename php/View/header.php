@@ -40,11 +40,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home
+              <a class="nav-link" href="index.php">Route Planner
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="search.php">Search</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="profile.php">View Profile</a>

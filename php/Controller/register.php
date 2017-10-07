@@ -31,11 +31,12 @@
                 $sqlTourist = "INSERT INTO tourist (firstName, surname, email, loginID) VALUES ('$firstName', '$surname', '$email', (SELECT loginID FROM login WHERE username='$username'))";
                 $result = $pdo->query($sqlTourist);
                 if($result){
-                    //include 'regSuccess.php';
+                    include 'regSuccess.php';
                     ?>
                         <script>
-                            alert('Tourist Registration Successful! You may now login');
-                            window.location="../login.php";
+                            setTimeout(function () {
+                            window.location.href = "../login.php"; 
+                            }, 3000);
                         </script>
                     <?php
                 }else{

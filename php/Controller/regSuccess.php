@@ -13,7 +13,7 @@
 <body>
     <script>
         bootbox.alert({
-            message: "Registration Successful!",
+            message: "Registration Successful! Redirected to the login in 5 seconds",
             size: 'small'
         });
     </script>
