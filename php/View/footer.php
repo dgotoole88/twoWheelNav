@@ -35,9 +35,7 @@
 			<div class="footer-left">
 
 				<p class="footer-links">
-					<a href="index.php">Home</a>
-					·
-					<a href="search.php">Search</a>
+					<a href="index.php">Route Planner</a>
 					·
 					<a href="profile.php">Profile</a>
 					·

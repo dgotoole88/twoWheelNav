@@ -24,6 +24,16 @@ body
     overflow-x:hidden;
     padding-top: 5em;
 }
+#searchBody{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 20% 0 20%;
+}
+#searchHeadings{
+    text-align: center;
+    color: white;
+    padding-top: 1em;
+}
 #note{
     height: 100%;
     width: 100%;
@@ -62,7 +72,7 @@ body
 }
 #searchContainer{
     height: auto;
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -98,9 +108,9 @@ body
 #mapContainer{
     height: auto;
     width: auto;
-    padding: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    padding-top: 2em;
 }
 #poi{
     height: auto;
@@ -138,6 +148,7 @@ select{
 }
 label{
     margin: .4em 0 .4em 0;
+    color: white;
 }
 .loginTitle{
     font-size: 1.1em;
@@ -274,10 +285,26 @@ img{
     height: auto;
     width: 100%;
 }
+#map{
+    height: 40em;
+    width: 60em;
+    border: thin solid black;
+}
 #ausMap{
     height: auto;
     width: 100%;
     padding-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+#searchInput{
+    width: 60em;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+#alignSearch{
+    width: auto;
     display: flex;
     justify-content: center;
 }
@@ -343,6 +370,15 @@ input:focus:valid{
     background: rgba(0,0,0,0.3) url(../images/valid.png) no-repeat 98% center;
     box-shadow: 0 0 5px #5cd053;
     border-color: #28921f;
+}
+#form{
+    margin-top: 2em;
+    border: thin solid black;
+    padding: 2em;
+    color: white;
+}
+#type{
+    margin-bottom: 2em;
 }
 .formHint{
     background: #d45252;
@@ -484,5 +520,21 @@ a:hover {
         display: flex;
         justify-content: center;
         margin: 0;
+    }
+    #mapContainer{
+        height: auto;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #searchBody{
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    #form{
+        margin: 0;
+    }
+    #searchHeadings{
+        display: none;
     }
 }

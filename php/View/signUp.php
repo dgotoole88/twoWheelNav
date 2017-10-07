@@ -62,9 +62,6 @@
                 </fieldset>
             </fieldset>
         </div>
-        <div id="usernameTaken">
-            <?php include '../Controller/usernameTaken.php'; ?>
-        </div>
         <footer><?php include 'footerReg.php';?></footer>
     </body>
 </html>
