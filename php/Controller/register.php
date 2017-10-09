@@ -1,4 +1,6 @@
 <?php
+    include '../Model/connectDB.php';
+
     $count = 0;
 
     // validate user input
@@ -16,7 +18,6 @@
         $surname = filter_var(test_Reginput($_POST['surname']), FILTER_SANITIZE_STRING);
         $email = $_POST['email'];
 
-        $pdo = new PDO("mysql:host=localhost;dbname=twoWheelNav", 'root', '');
         $sqlReserved = "SELECT COUNT(*) FROM login WHERE username='$username'";
         $res = $pdo->query($sqlReserved);
         $count = $res->fetchColumn();
