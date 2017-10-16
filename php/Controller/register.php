@@ -1,4 +1,6 @@
 <?php
+    header("Content-type: application/json");
+
     include '../Model/connectDB.php';
 
     $count = 0;
@@ -24,31 +26,34 @@
 
         $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 
+        $response = array(); // Array to json encode
+
         if($count == 0){
             $sqlLogin = "INSERT INTO login (username, password) VALUES ('$username', '$hashedPass')";
             $resultLogin = $pdo->query($sqlLogin);
+
+            $response['status'] = 'Success';                // Set response status
+            $response['message'] = 'This was successful';   // Set message status
     
             if($resultLogin){
                 $sqlTourist = "INSERT INTO tourist (firstName, surname, email, loginID) VALUES ('$firstName', '$surname', '$email', (SELECT loginID FROM login WHERE username='$username'))";
                 $result = $pdo->query($sqlTourist);
                 if($result){
-                    include 'regSuccess.php';
-                    ?>
-                        <script>
-                            setTimeout(function () {
-                            window.location.href = "../login.php"; 
-                            }, 3000);
-                        </script>
-                    <?php
+                    $response['status'] = 'Success';                // Set response status
+                    $response['message'] = 'This was successful';   // Set message status
                 }else{
-                    include 'errorModal.php';
+                    $response['status'] = 'Error';                  // Set response status
+                    $response['message'] = 'This was unsuccessful'; // Set message status
                     unset($_SESSION["currentUser"]);
                 }
             }else{
-                include 'errorModal.php';
+                $response['status'] = 'Error';                  // Set response status
+                $response['message'] = 'This was unsuccessful'; // Set message status
             }
         }else{
-            include 'errorUsernameTaken.php';
+            $response['status'] = 'Taken';                  // Set response status
+            $response['message'] = 'This was unsuccessful'; // Set message status
         }
+        echo json_encode($response);    // echo response as json
     }
 ?>

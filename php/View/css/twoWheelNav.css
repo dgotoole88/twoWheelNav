@@ -383,6 +383,12 @@ input:focus:valid{
 #type{
     margin-bottom: 2em;
 }
+#message{
+    text-align: center;
+    color: white;
+    font-size: 1.1em;
+    padding-top: 1em;
+}
 .formHint{
     background: #d45252;
     border-radius: 3px 3px 3px 3px;

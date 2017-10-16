@@ -4,8 +4,9 @@
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../../js/register.js"></script>
         <?php   
-            include '../Controller/register.php';
             include 'registerHeader.php';
         ?>
         <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
@@ -29,7 +30,7 @@
                                 <label>Password</label>
                             </div>
                             <div>
-                                <input class="inputLog" type="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                                <input id="password" class="inputLog" type="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                                 <span class="formHint">Must have: UpperCase, LowerCase, and min 8 Chars</span>
                             </div>
                             <div>
@@ -55,7 +56,10 @@
                             </div>
                             <div>
                             <div>
-                                <button name="submitTour" onclick="testUsername()" type="submit" value="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+                                <button id="submit" name="submitTour" type="button" value="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+                            </div>
+                            <div>
+                                <h2 id="message"></h2>
                             </div>
                         </div>
                     </form>
@@ -75,7 +79,6 @@
         if(username){
             username.addEventListener("change", function(){
             sessionStorage.setItem("usernameSave", username.value);
-            console.log(username.value);
             });
         }
         // SessionStorage for first name
@@ -87,7 +90,6 @@
         if(firstName){
             firstName.addEventListener("change", function(){
             sessionStorage.setItem("firstNameSave", firstName.value);
-            console.log(firstName.value);
             });
         }
         // SessionStorage for surname
@@ -99,7 +101,6 @@
         if(surname){
             surname.addEventListener("change", function(){
             sessionStorage.setItem("surnameSave", surname.value);
-            console.log(surname.value);
             });
         }
         // SessionStorage for email
@@ -111,7 +112,6 @@
         if(email){
             email.addEventListener("change", function(){
             sessionStorage.setItem("emailSave", email.value);
-            console.log(email.value);
             });
         }
 </script>
