@@ -1,17 +1,19 @@
 <?php
+    include '../Model/connectDB.php';
+
     function getPosts()
     {
         $posts = array();
         $posts[0] = $_POST['username'];
-        $posts[3] = $_POST['email'];
+        $posts[1] = $_POST['email'];
         return $posts;
     }
 
-    if(isset($_POST['update']))
+    if(isset($_POST['email']))
     {
         $data = getPosts();
         $updateQuery = "UPDATE tourist JOIN login ON tourist.loginID = login.loginID
-                        SET tourist.email ='$data[3]' WHERE login.username = '$data[0]'";
+                        SET tourist.email ='$data[1]' WHERE login.username = '$data[0]'";
 
             $updateResult = $pdo->query($updateQuery);
             
@@ -22,7 +24,7 @@
                 {
                     ?>
                     <script type="text/javascript">
-                        window.location="profile.php";
+                        window.location="../View/profile.php";
                     </script>
                     <?php
                 }else{

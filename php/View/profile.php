@@ -5,10 +5,11 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../../js/updateEmail.js"></script>
         <?php
             include 'header.php';
             include '../Controller/userDataDisplay.php';
-            include '../Controller/updateUserData.php';
             include '../Controller/unauthAccess.php';
         ?>
         <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
@@ -32,7 +33,7 @@
                             <label>Username</label>
                         </div>
                         <div>
-                            <input class="inputLog" type="text" name="username" value="<?php print_r($showUsername); ?>" required>
+                            <input id="username" class="inputLog" type="text" name="username" value="<?php print_r($showUsername); ?>" required>
                         </div>
                         <div>
                             <label>First Name</label>
@@ -50,10 +51,11 @@
                             <label>Email</label>
                         </div>
                         <div>
-                            <input class="inputLog" type="email" name="email" value="<?php print_r($showEmail); ?>" required>
+                            <input class="inputLog" id="email" type="email" name="email" value="<?php print_r($showEmail); ?>" required>
                             <div class="formHint">Email example: name@emailprovider.com</div>
-                            <input type="submit" name="update" value="Update email" class="btn btn-primary btn-block btn-large">
+                            <input type="button" id="submitUpdate" name="update" value="Update email" class="btn btn-primary btn-block btn-large">
                         </div>
+                        <p id="status"></p>
                     </div>
                 </form>
                 <?php
