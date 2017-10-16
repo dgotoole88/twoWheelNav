@@ -1,4 +1,6 @@
 <?php
+    header("Content-type: application/json");
+    
     include '../Model/connectDB.php';
 
     function getPosts()
@@ -15,22 +17,18 @@
         $updateQuery = "UPDATE tourist JOIN login ON tourist.loginID = login.loginID
                         SET tourist.email ='$data[1]' WHERE login.username = '$data[0]'";
 
-            $updateResult = $pdo->query($updateQuery);
+        $updateResult = $pdo->query($updateQuery);
+
+        $response = array(); // Array to json encode
             
             if($updateQuery)
             {
-                $updateQuery = 1;
-                if($updateQuery > 0)
-                {
-                    ?>
-                    <script type="text/javascript">
-                        window.location="../View/profile.php";
-                    </script>
-                    <?php
-                }else{
-                    echo 'Data Not Updated';
-                }
+                $response['status'] = 'Success';                // Set response status
+                $response['message'] = 'This was successful';   // Set message status
+            }else{
+                $response['status'] = 'Error';                  // Set response status
+                $response['message'] = 'This was unsuccessful'; // Set message status
             }
+            echo json_encode($response);
     }
-    
 ?>

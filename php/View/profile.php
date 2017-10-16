@@ -55,7 +55,9 @@
                             <div class="formHint">Email example: name@emailprovider.com</div>
                             <input type="button" id="submitUpdate" name="update" value="Update email" class="btn btn-primary btn-block btn-large">
                         </div>
-                        <p id="status"></p>
+                        <div>
+                            <h3 id="message"></h3>
+                        </div>
                     </div>
                 </form>
                 <?php
