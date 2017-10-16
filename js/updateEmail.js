@@ -1,6 +1,5 @@
 // Update email - jQuery / AJAX
 
-
   function submit() {
     $("#submitUpdate").click(function(e) {
       
@@ -22,6 +21,12 @@
           },
           success: function(data) {
             console.log("Update successful");
+            if(data.status == 'Success'){
+              document.getElementById("message").innerHTML="Email updated";
+            }
+            if(data.status == 'Error'){
+              document.getElementById("message").innerHTML="Email did not update";
+            }
           },//here
           error: function() {
             console.log("Update unsuccessful");
