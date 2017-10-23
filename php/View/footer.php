@@ -42,7 +42,7 @@
 					<a href="../Controller/session.php">Logout</a>
 				</p>
 
-				<p>Two Wheel Nav &copy; 2015</p>
+				<p>Two Wheel Nav &copy; 2017</p>
 			</div>
 
 		</footer>

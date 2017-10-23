@@ -31,6 +31,9 @@ function displayRoute(origin, destination, service, display) {
   }, function(response, status) {
     if (status === 'OK') {
       display.setDirections(response);
+      document.getElementById('save').style.display = 'block';
+      console.log(document.getElementById('startPoint').value);
+      console.log(document.getElementById('endPoint').value);
     }
   });
 }

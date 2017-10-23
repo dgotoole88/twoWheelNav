@@ -1,10 +1,14 @@
 <?php
+    
+
     if(!isset($_SESSION)){
         session_start();
     }
     include '../Model/connectDB.php';
     $userCheck = $_SESSION['currentUser'];
     $_SESSION['count'] = 1;
+
+    $response = array(); // Array to json encode
 
     if(isset($_GET) & empty($_POST)){
         //display username
@@ -23,5 +27,11 @@
         $email = "SELECT tourist.email FROM tourist INNER JOIN login ON tourist.loginID = login.loginID WHERE username = '$userCheck'";
         $emailResult = $pdo->query($email);
         $showEmail = $emailResult->fetchColumn();
+
+        $response[0] = $showUsername;
+        $response[1] = $showFirstName;
+        $response[2] = $showSurname;
+        $response[3] = $showEmail;
     }
+    echo json_encode($response);
 ?>

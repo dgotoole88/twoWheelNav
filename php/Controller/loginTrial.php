@@ -31,6 +31,12 @@
         if(password_verify($password, $hashReturn)) {
             $_SESSION['count'] = 1;
             $_SESSION['currentUser'] = $username;
+
+            $sqlTouristID = "SELECT tourist.touristID FROM tourist JOIN login ON tourist.loginID = login.loginID WHERE login.username = '$username'";
+            $idRes = $pdo->query($sqlTouristID);
+            $id = $idRes->fetchColumn();
+    
+            $_SESSION['touristID'] = $id;
     ?>
         <script type="text/javascript">
             window.location="View/profile.php";

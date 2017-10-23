@@ -176,11 +176,11 @@ button{
     font-size: .7em;
     color: #001f3f;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
+    color: white;
 }
 .classH3{
     font-size: .9em;
-    color: black;
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .classH2{
@@ -324,6 +324,12 @@ textarea{
     padding: 2em;
     background: rgba(174, 206, 239, .3);
 }
+#userRoutes{
+    width: 30em;
+    border: thin solid black;
+    padding: 2em;
+    background: rgba(174, 206, 239, .3);
+}
 #sessionInfo{
     height: auto;
     width: 100%;
@@ -349,6 +355,10 @@ textarea{
 #update{
     font-size: 1.5em;
     display: none;
+    text-align: center;
+}
+#saveMessage{
+    color: black;
     text-align: center;
 }
 #usernameTaken{
@@ -405,6 +415,25 @@ input:focus:valid{
     position: absolute;
     top:-12px;
     left:6px;
+}
+#save{
+    display: none;
+    padding: 1em;
+}
+.loopLabel{
+    color: white;
+}
+#routeBlocks{
+    border-top: thin solid black;
+    border-bottom: thin solid black;
+    margin: .5em;
+    padding: 0, 1em, 0, 1em;
+}
+#bufferButt{
+    margin-bottom: .5em;
+}
+#directionsHeading{
+    text-align: center;
 }
 input:focus + .formHint {display: inline;}
 input:required:valid + .formHint {background: #28921f;} /* change form hint color when valid */
@@ -472,7 +501,7 @@ a:hover {
     text-decoration: none;
     color: teal;
 }
-@media only screen and (max-width: 775px){
+@media only screen and (max-width: 975px){
     #toggleMenu{
         display: block;
     }
@@ -487,6 +516,7 @@ a:hover {
     }
     #profileContainer{
         margin: 0;
+        flex-wrap: wrap; 
     }
     #footerContainer{
         flex-wrap: wrap;
@@ -538,12 +568,21 @@ a:hover {
     #searchBody{
         flex-wrap: wrap;
         margin: 0;
+        padding: 0;
     }
     #form{
-        margin: 0;
         width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 2em;
     }
     #searchHeadings{
         display: none;
+    }
+    #userRoutes{
+        padding: 1em 0 0 0;
+    }
+    #userData{
+        width: 100%;
     }
 }
