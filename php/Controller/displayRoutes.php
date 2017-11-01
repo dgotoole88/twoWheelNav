@@ -41,9 +41,11 @@
             echo '<label class="loopLabel">End Point:</label>';
             echo '<div>' . $showRouteEnd[$i] . '</div>';
             echo '</div>';
-            echo '<form action="" method="post"><div id="bufferButt"><button class="btn btn-primary btn-block btn-large" value="Open Route" type="submit">Open Route</button>
-                  <button class="btn btn-primary btn-block btn-large" value='. $showRouteName .' type="submit" name="deleteRoute">Delete</button></div></form>';
-            echo '</div>';
+            echo '<form action="../View/index.php" method="POST">
+                    <input id="open" name="open" type="hidden" value=' . $showRouteName . '></input>
+                    <div id="bufferButt"><button name="sub" class="btn btn-primary btn-block btn-large" value=' . $showRouteName . ' type="submit">Open Route</button></div>
+                  </form>
+                  <form action="" method="post"><button class="btn btn-primary btn-block btn-large" value='. $showRouteName .' type="submit" name="deleteRoute">Delete</button></div></form>';
         }
     }
 ?>

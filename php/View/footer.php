@@ -33,7 +33,10 @@
 			</div>
 
 			<div class="footer-left">
-
+			<?php
+			$currUser = $_SESSION['currentUser'];
+				if($currUser != "admin"){
+				?>
 				<p class="footer-links">
 					<a href="index.php">Route Planner</a>
 					·
@@ -41,6 +44,22 @@
 					·
 					<a href="../Controller/session.php">Logout</a>
 				</p>
+				<?php
+			}
+				if($currUser == "admin"){
+				?>
+				<p class="footer-links">
+					<a href="index.php">Route Planner</a>
+					·
+					<a href="profile.php">Profile</a>
+					·
+					<a href="../Controller/session.php">Logout</a>
+					·
+					<a href="../View/adminPanel.php">Admin Panel</a>
+				</p>
+				<?php
+				}
+				?>
 
 				<p>Two Wheel Nav &copy; 2017</p>
 			</div>
