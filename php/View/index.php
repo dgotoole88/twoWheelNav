@@ -12,6 +12,10 @@
         <?php
             include 'header.php';
             include '../Controller/unauthAccess.php';
+            include '../Controller/openRoute.php';
+
+            $start = $_SESSION['startPoint'];
+            $end = $_SESSION['endPoint'];
         ?>
         <title>Two Wheel Nav</title>
     </head>
@@ -30,15 +34,33 @@
                         <div>
                             <label class="white">Start point</label>
                         </div>
-                        <div>
-                            <input id="startPoint" onFocus="geolocate()" class="inputLog" type="text" required>
-                        </div>
-                        <div>
-                            <label class="white">End point</label>
-                        </div>
-                        <div>
-                            <input id="endPoint" class="inputLog" type="text" required>
-                        </div>
+                            <?php
+                                if($start && $end != ""){
+                            ?>
+                                    <div>
+                                        <input id="startPoint" onFocus="geolocate()" class="inputLog" value="<?php print_r($start); ?>" type="text" required>
+                                    </div>
+                                    <div>
+                                        <label class="white">End point</label>
+                                    </div>
+                                    <div>
+                                        <input id="endPoint" class="inputLog" value="<?php print_r($end); ?>" type="text" required>
+                                    </div>
+                            <?php
+                                }else{    
+                            ?>
+                                <div>
+                                    <input id="startPoint" onFocus="geolocate()" class="inputLog" type="text" required>
+                                </div>
+                                <div>
+                                    <label class="white">End point</label>
+                                </div>
+                                <div>
+                                    <input id="endPoint" class="inputLog" type="text" required>
+                                </div>
+                            <?php
+                                }
+                            ?>
                         <div>
                             <button id="submitSearch" onclick="initMap()" type="button" class="btn btn-primary btn-block btn-large">Go</button>
                         </div>

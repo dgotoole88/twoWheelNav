@@ -31,7 +31,7 @@
           success: function(data) {
             console.log(data);
             if(data.status == 'Success'){
-              document.getElementById("message").innerHTML="Form Submitted Successfully";
+              document.getElementById("message").innerHTML="Form Submitted";
             }
             if(data.status == 'Error'){
               document.getElementById("message").innerHTML="Form did not submit";

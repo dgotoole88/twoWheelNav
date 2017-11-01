@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-10-23 22:51:59
+Date: 2017-11-01 19:45:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -80,13 +80,12 @@ CREATE TABLE `login` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`loginID`)
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of login
 -- ----------------------------
-INSERT INTO `login` VALUES ('100', 'dgotoole', '$2y$10$V2gtNbcYJCK4L5veSL3Zwu9K81bVdxQU8bzMNrq7BtGdwlEvCJqJ6');
-INSERT INTO `login` VALUES ('128', 'kesaunders', '$2y$10$yL.00l0xOPL39/qToKhb1O4WwCW5I9Hz3266tOpXkSumTwxmdK79S');
+INSERT INTO `login` VALUES ('100', 'admin', '$2y$10$V2gtNbcYJCK4L5veSL3Zwu9K81bVdxQU8bzMNrq7BtGdwlEvCJqJ6');
 
 -- ----------------------------
 -- Table structure for `pointofinterest`
@@ -120,13 +119,17 @@ CREATE TABLE `savedroute` (
   PRIMARY KEY (`routeID`),
   KEY `touristID` (`touristID`),
   CONSTRAINT `touristID` FOREIGN KEY (`touristID`) REFERENCES `tourist` (`touristID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of savedroute
 -- ----------------------------
-INSERT INTO `savedroute` VALUES ('54', 'Hobart, Tasmania, Australia', 'Launceston, Tasmania, Australia', 'HobartToLaunceston', '48');
-INSERT INTO `savedroute` VALUES ('58', 'Stonor Road, Stonor, Tasmania, Australia', 'New Norfolk, Tasmania, Australia', 'BoganVille', '48');
+INSERT INTO `savedroute` VALUES ('60', 'Perth, Western Australia, Australia', 'Geraldton, Western Australia, Australia', 'WAisMASSIVE', '48');
+INSERT INTO `savedroute` VALUES ('61', 'Hobart, Tasmania, Australia', 'Devonport, Tasmania, Australia', 'Space', '48');
+INSERT INTO `savedroute` VALUES ('62', 'Swansea, Tasmania, Australia', 'Oatlands, Tasmania, Australia', 'EastCoast', '48');
+INSERT INTO `savedroute` VALUES ('63', 'Hobart, Tasmania, Australia', 'Launceston, Tasmania, Australia', 'longRoad', '48');
+INSERT INTO `savedroute` VALUES ('65', 'Stonor Road, Stonor, Tasmania, Australia', 'Launceston, Tasmania, Australia', 'home', '48');
+INSERT INTO `savedroute` VALUES ('66', 'New Town, Tasmania, Australia', 'Glenorchy, Tasmania, Australia', 'oldDays', '48');
 
 -- ----------------------------
 -- Table structure for `tourist`
@@ -141,13 +144,12 @@ CREATE TABLE `tourist` (
   PRIMARY KEY (`touristID`),
   KEY `loginID` (`loginID`),
   CONSTRAINT `loginID` FOREIGN KEY (`loginID`) REFERENCES `login` (`loginID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tourist
 -- ----------------------------
 INSERT INTO `tourist` VALUES ('48', 'David', 'OToole', 'cell321@hotmail.com', '100');
-INSERT INTO `tourist` VALUES ('76', 'Katherine', 'Saunders', 'hotpotato555@hotmail.com', '128');
 
 -- ----------------------------
 -- Table structure for `travelplan`

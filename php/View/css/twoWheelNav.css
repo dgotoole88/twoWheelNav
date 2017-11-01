@@ -320,12 +320,21 @@ textarea{
     width: 12.8em;
 }
 #userData{
+    width: 30em;
+    border: thin solid black;
+    padding: 2em;
+    background: rgba(174, 206, 239, .3);
+}
+#userDataAdmin{
+    margin-top: 1em;
     border: thin solid black;
     padding: 2em;
     background: rgba(174, 206, 239, .3);
 }
 #userRoutes{
+    overflow-y: scroll;
     width: 30em;
+    height: 40em;
     border: thin solid black;
     padding: 2em;
     background: rgba(174, 206, 239, .3);
@@ -398,6 +407,13 @@ input:focus:valid{
     color: white;
     font-size: 1.1em;
     padding-top: 1em;
+}
+#messageDelete{
+    text-align: center;
+    color: white;
+    font-size: 1.1em;
+    padding-top: 1em;
+    display: none;
 }
 .formHint{
     background: #d45252;
@@ -501,7 +517,50 @@ a:hover {
     text-decoration: none;
     color: teal;
 }
-@media only screen and (max-width: 975px){
+#AdminPanelContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+#panel{
+    padding-top: 1em;
+}
+#white{
+    color: white;
+}
+#adminPanelHead{
+    font-size: 2.5em;
+    padding-top: .5em;
+    text-align: center;
+    color: white;
+}
+#deleteData{
+    display: flex;
+    justify-content: center;
+}
+#userDeleted{
+    display: none;
+}
+#clear{
+    color: white;
+    height: 4em;
+    background-color: black;
+    margin-top: 2em;
+    padding: 0 1em 0 1em;
+}
+#dbCleared{
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+}
+#clearTest{
+    display: none;
+}
+#centre{
+    text-align: center;
+}
+@media only screen and (max-width: 900px){
     #toggleMenu{
         display: block;
     }
@@ -572,7 +631,6 @@ a:hover {
     }
     #form{
         width: 100%;
-        height: auto;
         margin: 0;
         padding: 2em;
     }
@@ -582,7 +640,9 @@ a:hover {
     #userRoutes{
         padding: 1em 0 0 0;
     }
-    #userData{
+    #panel{
         width: 100%;
+        margin: 1em;
+        padding: 0;
     }
 }

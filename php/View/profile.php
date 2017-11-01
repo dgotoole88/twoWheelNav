@@ -14,6 +14,7 @@
             include 'header.php';
             include '../Controller/unauthAccess.php';
             include '../Controller/deleteRoute.php';
+            include '../Controller/openRoute.php';
         ?>
         <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
