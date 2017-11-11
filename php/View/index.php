@@ -9,6 +9,10 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJMUqwdQmDhef158yXVrjvOJF3XcMUrEA&libraries=places&callback=initAutocomplete"
         async defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Weatherzone forecast button-->
+
+	<!--end Weatherzone forecast button-->
+  
         <?php
             include 'header.php';
             include '../Controller/unauthAccess.php';
@@ -20,9 +24,6 @@
         <title>Two Wheel Nav</title>
     </head>
     <body id="bodyStyles" onload="initMap()">
-
-        <div id="alignSearch">
-        </div>
         <div id="searchBody">
             <div id="mapContainer">
                 <div id="map"></div>
@@ -77,6 +78,18 @@
                         </div>
                     </form>
                 </fieldset>
+            </div>
+        </div>
+        <div id="alignSearch">
+            <div id="forecast">
+                <label>Weather Forecast</label>
+                <script type="text/javascript" src="https://www.weatherzone.com.au/woys/graphic_forecast.jsp?postcode=4051"></script>
+                <a class="weatherLinks" href="http://www.weatherzone.com.au/radar.jsp">View lightning tracker</a>
+            </div>
+            <div id="currentWeather">
+                <label>Current Weather</label>
+                <script type="text/javascript" src="https://www.weatherzone.com.au/woys/graphic_current.jsp?postcode=4051"></script>
+                <a class="weatherLinks" href="http://www.weatherzone.com.au/radar.jsp">View weather radar</a>
             </div>
         </div>
     </body>

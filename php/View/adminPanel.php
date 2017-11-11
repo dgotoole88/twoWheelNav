@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <?php include 'header.php'; ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" /> 
-        <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../../js/adminPanelDisplay.js"></script>
         <script src="../../js/searchUser.js" type="text/javascript"></script>
@@ -64,9 +62,6 @@
                                     <input class="inputLog" id="emailPanel" type="email" name="email" required>
                                     <div class="formHint">Email example: name@emailprovider.com</div>
                                     <input type="button" id="deleteUser" name="deleteUser" value="Delete user" class="btn btn-primary btn-block btn-large">
-                                </div>
-                                <div>
-                                    <h3 id="messageDelete">User deleted</h3>
                                 </div>
                             </div>
                         </form>

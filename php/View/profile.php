@@ -1,7 +1,4 @@
 <!DOCTYPE HTML>
-<script>
-    
-</script>
 <html>
     <head>
         <meta charset="utf-8">
@@ -16,14 +13,15 @@
             include '../Controller/deleteRoute.php';
             include '../Controller/openRoute.php';
         ?>
-        <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Two Wheel Nav</title>
     </head>
     <body>
         <div id="profileTitle">
-            <h3 id="welcome" class="classH3">Hello </h3>
-            <h4 class="classH4">Welcome to your profile.</h4>
+            <h3 id="welcome" class="classH3">Welcome to your profile </h3>
+            <div id="picContainer">
+                <div id="pic" class="circleBase"><img src="<?php include '../Controller/picDisplay.php' ?>" alt=""/></div>
+            </div>
         </div>
         <div id="profileContainer">
             <fieldset id="userData">
@@ -56,19 +54,18 @@
                             <div class="formHint">Email example: name@emailprovider.com</div>
                             <input type="button" id="submitUpdate" name="update" value="Update email" class="btn btn-primary btn-block btn-large">
                         </div>
-                        <div>
-                            <h3 id="message"></h3>
-                        </div>
                     </div>
+                </form>
+                <label id="uploadHeading">Select profile picture to upload:</label>
+                <form id="upload" action="../Controller/upload.php" method="post" enctype="multipart/form-data">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Image" name="submit">
                 </form>
             </fieldset>
             <div id="userRoutes">
                 <h4 id="persDetHead">Saved Routes</h4>
                 <div id="dbRoutes"></div>
             </div>
-        </div>
-        <div id="update">
-            <h2>Updated</h2>
         </div>
         <footer><?php include 'footer.php';?></footer>
     </body>

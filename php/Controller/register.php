@@ -36,7 +36,7 @@
             $response['message'] = 'This was successful';   // Set message status
     
             if($resultLogin){
-                $sqlTourist = "INSERT INTO tourist (firstName, surname, email, loginID) VALUES ('$firstName', '$surname', '$email', (SELECT loginID FROM login WHERE username='$username'))";
+                $sqlTourist = "INSERT INTO tourist (firstName, surname, email, profilePic, loginID) VALUES ('$firstName', '$surname', '$email', '../View/images/profilePictures/unknown.jpg', (SELECT loginID FROM login WHERE username='$username'))";
                 $result = $pdo->query($sqlTourist);
                 if($result){
                     $response['status'] = 'Success';                // Set response status
