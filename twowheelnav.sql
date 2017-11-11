@@ -10,52 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-11-01 19:45:06
+Date: 2017-11-11 23:02:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
--- ----------------------------
--- Table structure for `address`
--- ----------------------------
-DROP TABLE IF EXISTS `address`;
-CREATE TABLE `address` (
-  `addressID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `suburb` varchar(255) NOT NULL,
-  `state` varchar(255) NOT NULL,
-  `postcode` smallint(4) NOT NULL,
-  PRIMARY KEY (`addressID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of address
--- ----------------------------
-
--- ----------------------------
--- Table structure for `business`
--- ----------------------------
-DROP TABLE IF EXISTS `business`;
-CREATE TABLE `business` (
-  `businessID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `businessName` varchar(255) NOT NULL,
-  `businessDescription` text NOT NULL,
-  `businessAddress` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `loginID` int(10) unsigned NOT NULL,
-  `addressID` int(10) unsigned NOT NULL,
-  `pointOfInterestID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`businessID`),
-  KEY `bLoginID` (`loginID`),
-  KEY `addressID` (`addressID`),
-  KEY `bPointOfInterestID` (`pointOfInterestID`),
-  CONSTRAINT `addressID` FOREIGN KEY (`addressID`) REFERENCES `address` (`addressID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `bLoginID` FOREIGN KEY (`loginID`) REFERENCES `login` (`loginID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `bPointOfInterestID` FOREIGN KEY (`pointOfInterestID`) REFERENCES `pointofinterest` (`pointOfInterestID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of business
--- ----------------------------
-
 -- ----------------------------
 -- Table structure for `category`
 -- ----------------------------
@@ -80,12 +38,13 @@ CREATE TABLE `login` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`loginID`)
-) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of login
 -- ----------------------------
-INSERT INTO `login` VALUES ('100', 'admin', '$2y$10$V2gtNbcYJCK4L5veSL3Zwu9K81bVdxQU8bzMNrq7BtGdwlEvCJqJ6');
+INSERT INTO `login` VALUES ('252', 'admin', '$2y$10$w2SRtiyb7l6y7gkfn/5A..cRb5K5g0ZWiS92wMqGZDm4pzEhQyeZC');
+INSERT INTO `login` VALUES ('257', 'bob', '$2y$10$fQRH3lvOMLN4X1i8Vv4lpe3tD90kKIWKcRc8qntcDAP6.1l0DGI/i');
 
 -- ----------------------------
 -- Table structure for `pointofinterest`
@@ -119,17 +78,13 @@ CREATE TABLE `savedroute` (
   PRIMARY KEY (`routeID`),
   KEY `touristID` (`touristID`),
   CONSTRAINT `touristID` FOREIGN KEY (`touristID`) REFERENCES `tourist` (`touristID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of savedroute
 -- ----------------------------
-INSERT INTO `savedroute` VALUES ('60', 'Perth, Western Australia, Australia', 'Geraldton, Western Australia, Australia', 'WAisMASSIVE', '48');
-INSERT INTO `savedroute` VALUES ('61', 'Hobart, Tasmania, Australia', 'Devonport, Tasmania, Australia', 'Space', '48');
-INSERT INTO `savedroute` VALUES ('62', 'Swansea, Tasmania, Australia', 'Oatlands, Tasmania, Australia', 'EastCoast', '48');
-INSERT INTO `savedroute` VALUES ('63', 'Hobart, Tasmania, Australia', 'Launceston, Tasmania, Australia', 'longRoad', '48');
-INSERT INTO `savedroute` VALUES ('65', 'Stonor Road, Stonor, Tasmania, Australia', 'Launceston, Tasmania, Australia', 'home', '48');
-INSERT INTO `savedroute` VALUES ('66', 'New Town, Tasmania, Australia', 'Glenorchy, Tasmania, Australia', 'oldDays', '48');
+INSERT INTO `savedroute` VALUES ('75', 'Launceston, Tasmania, Australia', 'Hobart, Tasmania, Australia', 'LongRoad', '199');
+INSERT INTO `savedroute` VALUES ('77', 'Kingston, Tasmania, Australia', 'Kettering, Tasmania, Australia', 'Wooos', '199');
 
 -- ----------------------------
 -- Table structure for `tourist`
@@ -140,37 +95,15 @@ CREATE TABLE `tourist` (
   `firstName` varchar(255) NOT NULL,
   `surname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `profilePic` varchar(255) DEFAULT NULL,
   `loginID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`touristID`),
   KEY `loginID` (`loginID`),
   CONSTRAINT `loginID` FOREIGN KEY (`loginID`) REFERENCES `login` (`loginID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tourist
 -- ----------------------------
-INSERT INTO `tourist` VALUES ('48', 'David', 'OToole', 'cell321@hotmail.com', '100');
-
--- ----------------------------
--- Table structure for `travelplan`
--- ----------------------------
-DROP TABLE IF EXISTS `travelplan`;
-CREATE TABLE `travelplan` (
-  `travelPlanID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `travelPlanName` varchar(255) NOT NULL,
-  `startPointLat` decimal(8,6) NOT NULL,
-  `startPointLong` decimal(9,6) NOT NULL,
-  `endPointLat` decimal(8,6) NOT NULL,
-  `endPointLong` decimal(9,6) NOT NULL,
-  `touristID` int(10) unsigned NOT NULL,
-  `pointOfInterestID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`travelPlanID`),
-  KEY `tTouristID` (`touristID`),
-  KEY `tPointOfInterestID` (`pointOfInterestID`),
-  CONSTRAINT `tPointOfInterestID` FOREIGN KEY (`pointOfInterestID`) REFERENCES `pointofinterest` (`pointOfInterestID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `tTouristID` FOREIGN KEY (`touristID`) REFERENCES `tourist` (`touristID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of travelplan
--- ----------------------------
+INSERT INTO `tourist` VALUES ('199', 'David', 'OToole', 'cell321@hotmail.com', '../View/images/profilePictures/adminORXZ310.jpg', '252');
+INSERT INTO `tourist` VALUES ('204', 'David', 'OToole', 'cell321@hotmail.com', '../View/images/profilePictures/unknown.jpg', '257');

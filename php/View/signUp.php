@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="../../js/register.js"></script>
-        <?php   
+        <script src="../../js/validity.js"></script>
+        <?php
             include 'registerHeader.php';
         ?>
-        <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
         <title>Two Wheel Nav</title>
     </head>
     <body>
@@ -58,15 +58,13 @@
                             <div>
                                 <button id="submit" name="submitTour" type="button" value="submit" class="btn btn-primary btn-block btn-large">Submit</button>
                             </div>
-                            <div>
-                                <h2 id="message"></h2>
-                            </div>
                         </div>
                     </form>
                 </fieldset>
             </fieldset>
         </div>
         <footer><?php include 'footerReg.php';?></footer>
+        
     </body>
 </html>
 <script>
