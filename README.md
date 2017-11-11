@@ -16,4 +16,4 @@ Future updates:
 
 Known bugs:
 
--	Autocomplete input does not work correctly on mobiles. Google API fault.
+-	No known bugs with the current version.
