@@ -5,29 +5,15 @@ ________________________________________________________________________________
 
 Two Wheel Nav Notes:
 
--	Admin panel
-		- create a user called "admin" to access the admin panel
-		- search for registered users. Implemented an autocomplete search field
-			- Delete individual users
-			- View user deatils
-		- Button to clear entire database except for admin account
-
--	Google maps API implemented
-
-- 	Create routes with turn by turn directions
-		
-- 	Save routes
-		
-- 	Delete Routes
-		
--	Auto complete search fields
-
--	Users can view their personal details and also update their email
-
--	github url: https://github.com/dgotoole88/twoWheelNav
-
+-	Create a user called "admin" to access the admin panel.
 __________________________________________________________________________________________________________________________________________
 
 Future updates:
 
--	Implement a weather api that will display the forecast for each user's route.
+-	Upgrade the weather api to show the forecast and current weather for the current users route
+
+-	Implement vocal directions for use while riding.
+
+Known bugs:
+
+-	Autocomplete input does not work correctly on mobiles. Google API fault.
