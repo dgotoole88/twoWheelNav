@@ -6,62 +6,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="../../js/register.js"></script>
-        <script src="../../js/validity.js"></script>
         <?php
             include 'registerHeader.php';
         ?>
         <title>Two Wheel Nav</title>
     </head>
     <body>
+        <h3 id="regHead">Please register with TwoWheelNav</h3>
         <div id="regContainer">
-            <fieldset id="signUp">
-                <h4 class="loginTitle">Register</h4>
-                <fieldset id="touristReg">
-                    <form action="" name="register" method="post" id="register">
-                        <div>
+            <div id="alignRegCont">
+                <fieldset id="signUp">
+                    <h4 class="loginTitle">Register</h4>
+                    <fieldset id="touristReg">
+                        <form action="" name="register" method="post" id="register">
                             <div>
-                                <label>Username</label>
+                                <div>
+                                    <label>Username</label>
+                                </div>
+                                <div>
+                                    <input id="username" class="inputLog" type="text" name="username" pattern="^[a-z0-9]{3,15}$" required>
+                                    <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
+                                </div>
+                                <div>
+                                    <label>Password</label>
+                                </div>
+                                <div>
+                                    <input id="password" class="inputLog" type="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                                    <span class="formHint">Must have: UpperCase, LowerCase, and min 8 Chars</span>
+                                </div>
+                                <div>
+                                    <label>First Name</label>
+                                </div>
+                                <div>
+                                    <input id="firstName" class="inputLog" type="text" name="firstName" pattern="[A-Za-z]{2,32}" required>
+                                    <div class="formHint">Enter your First name</div>
+                                </div>
+                                <div>
+                                    <label>Surname</label>
+                                </div>
+                                <div>
+                                    <input id="surname" class="inputLog" type="text" name="surname" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
+                                    <div class="formHint">Enter your surname</div>
+                                </div>
+                                <div>
+                                    <label>Email</label>
+                                </div>
+                                <div>
+                                    <input id="email" class="inputLog" type="email" name="email" required>
+                                    <div class="formHint">Email example: name@emailprovider.com</div>
+                                </div>
+                                <div>
+                                <div>
+                                    <button id="submit" name="submitTour" type="button" value="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+                                </div>
                             </div>
-                            <div>
-                                <input id="username" class="inputLog" type="text" name="username" pattern="^[a-z0-9]{3,15}$" required>
-                                <div class="formHint">3 - 15 Letters or Numbers. No capitals</div>
-                            </div>
-                            <div>
-                                <label>Password</label>
-                            </div>
-                            <div>
-                                <input id="password" class="inputLog" type="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
-                                <span class="formHint">Must have: UpperCase, LowerCase, and min 8 Chars</span>
-                            </div>
-                            <div>
-                                <label>First Name</label>
-                            </div>
-                            <div>
-                                <input id="firstName" class="inputLog" type="text" name="firstName" pattern="[A-Za-z]{2,32}" required>
-                                <div class="formHint">Enter your First name</div>
-                            </div>
-                            <div>
-                                <label>Surname</label>
-                            </div>
-                            <div>
-                                <input id="surname" class="inputLog" type="text" name="surname" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
-                                <div class="formHint">Enter your surname</div>
-                            </div>
-                            <div>
-                                <label>Email</label>
-                            </div>
-                            <div>
-                                <input id="email" class="inputLog" type="email" name="email" required>
-                                <div class="formHint">Email example: name@emailprovider.com</div>
-                            </div>
-                            <div>
-                            <div>
-                                <button id="submit" name="submitTour" type="button" value="submit" class="btn btn-primary btn-block btn-large">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </fieldset>
                 </fieldset>
-            </fieldset>
+            </div>
         </div>
         <footer><?php include 'footerReg.php';?></footer>
         

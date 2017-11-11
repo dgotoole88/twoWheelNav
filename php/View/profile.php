@@ -20,7 +20,7 @@
         <div id="profileTitle">
             <h3 id="welcome" class="classH3">Welcome to your profile </h3>
             <div id="picContainer">
-                <div id="pic" class="circleBase"><img src="<?php include '../Controller/picDisplay.php' ?>" alt=""/></div>
+                <div id="pic" class="circleBase"><img src="<?php include '../Controller/picDisplay.php' ?>" alt="profile pic"/></div>
             </div>
         </div>
         <div id="profileContainer">
