@@ -11,7 +11,7 @@
         ?>
         <title>Two Wheel Nav</title>
     </head>
-    <body>
+    <body id="regBody">
         <h3 id="regHead">Please register with TwoWheelNav</h3>
         <div id="regContainer">
             <div id="alignRegCont">
@@ -32,7 +32,7 @@
                                 </div>
                                 <div>
                                     <input id="password" class="inputLog" type="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
-                                    <span class="formHint">Must have: UpperCase, LowerCase, and min 8 Chars</span>
+                                    <span class="formHint">Upper case, lower case, and min 8 chars</span>
                                 </div>
                                 <div>
                                     <label>First Name</label>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div>
                                     <input id="email" class="inputLog" type="email" name="email" required>
-                                    <div class="formHint">Email example: name@emailprovider.com</div>
+                                    <div class="formHint">Example: name@emailprovider.com</div>
                                 </div>
                                 <div>
                                 <div>
