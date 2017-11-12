@@ -1,0 +1,77 @@
+LOGIN
+
+HTTP/1.1 200 OK
+X-Powered-By: PHP/5.6.32
+Set-Cookie: PHPSESSID=fjo4f164j05l14csg4fvtkcm12; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+Content-Length: 3583
+Date: Sun, 12 Nov 2017 20:29:06 GMT
+Accept-Ranges: bytes
+Server: LiteSpeed
+Connection: close
+
+REGISTER
+
+HTTP/1.1 200 OK
+X-Powered-By: PHP/5.6.32
+Set-Cookie: PHPSESSID=vipbg6von9bcsnkap7ia3rgp23; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+Content-Length: 8627
+Date: Sun, 12 Nov 2017 20:30:57 GMT
+Accept-Ranges: bytes
+Server: LiteSpeed
+Connection: close
+
+PROFILE
+
+HTTP/1.1 302 Found
+X-Powered-By: PHP/5.6.32
+Set-Cookie: PHPSESSID=hu02jimo33glleg5qv6mhbn6h7; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-cache, no-store, must-revalidate, max-age=0                
+Pragma: no-cache
+Location: ../login.php
+Content-Type: text/html; charset=UTF-8
+Content-Length: 3004
+Date: Sun, 12 Nov 2017 20:31:46 GMT
+Accept-Ranges: bytes
+Server: LiteSpeed
+Connection: close
+
+ROUTE PLANNER
+
+HTTP/1.1 302 Found
+X-Powered-By: PHP/5.6.32
+Set-Cookie: PHPSESSID=9edim3q9f7if4e639c8qsr9tg4; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-cache, no-store, must-revalidate, max-age=0                
+Pragma: no-cache
+Location: ../login.php
+Content-Type: text/html; charset=UTF-8
+Content-Length: 3201
+Date: Sun, 12 Nov 2017 20:33:07 GMT
+Accept-Ranges: bytes
+Server: LiteSpeed
+Connection: close
+
+Admin panel
+
+HTTP/1.1 200 OK
+X-Powered-By: PHP/5.6.32
+Set-Cookie: PHPSESSID=d90sjr2ikpg9llej3b7dh85eb4; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+Content-Length: 7777
+Date: Sun, 12 Nov 2017 20:33:35 GMT
+Accept-Ranges: bytes
+Server: LiteSpeed
+Connection: close
+
