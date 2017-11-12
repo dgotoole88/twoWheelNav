@@ -3,15 +3,19 @@
 
   <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <?php include 'Controller/navMenu.php'; ?>
-
-    <!-- Bootstrap core CSS -->
-    <link href="View/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="TwoWheelNav">
+  <meta name="author" content="David O'Toole">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/twoWheelNav.css" media="screen"/>
+  <?php include 'Controller/navMenu.php'; ?>
+  <link href="View/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../js/bootbox.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="View/css/bootstrap.min.css" media="screen"/>
+  <link rel="stylesheet" type="text/css" href="View/css/twoWheelNav.css" media="screen"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Custom styles for this template -->
     <style>
       body {
