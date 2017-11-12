@@ -14,6 +14,9 @@ Future updates:
 
 -	Implement vocal directions for use while riding.
 
+- Able to add and save points of interest along routes.
+
 Known bugs:
 
--	No known bugs with the current version.
+- Firefox and Internet Explorer are not compatiable with 'filter' in css. This causes the background
+	to be blue instead of a mix of colours.
